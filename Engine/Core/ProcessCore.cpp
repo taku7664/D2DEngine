@@ -11,6 +11,7 @@ namespace Engine
 
 	void ProcessCore::Initialize()
 	{
+		m_worldCore = new WorldCore();
 	}
 
 	void ProcessCore::Run()

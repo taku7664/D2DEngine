@@ -46,3 +46,5 @@
 #include "Helper/Debug/Debug.h"
 
 #include "Interface/ILifeCycle.h"
+#include "Interface/Entity.h"
+#include "Interface/Factory.h"

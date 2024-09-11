@@ -1,6 +1,7 @@
 #pragma once
 #include "Window/Window/WindowCore.h"
 #include "Window/Console/ConsoleCore.h"
+#include "Core/WorldCore.h"
 
 class Window;
 class WindowData;
@@ -26,6 +27,7 @@ namespace Engine
 		virtual void LateUpdate() override;
 		virtual void Render(WindowCore* _window) override;
 	private:
+		WorldCore* m_worldCore;
 		WindowCore*  m_window = nullptr;
 		ConsoleCore* m_console = nullptr;
 	public:

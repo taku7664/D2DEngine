@@ -153,6 +153,10 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="Interface\Entity.h" />
+    <ClInclude Include="Interface\Factory.h" />
+    <ClInclude Include="Layer\Layer.h" />
+    <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Renderer\D2DRenderer.h" />
     <ClInclude Include="Helper\Input\InputDevice\GamePad.h" />
     <ClInclude Include="Helper\Time\Time.h" />
@@ -183,10 +187,15 @@
     <ClInclude Include="Window\Window\WindowCore.h" />
     <ClInclude Include="Window\Window\Window.h" />
     <ClInclude Include="Core\WorldCore.h" />
+    <ClInclude Include="World\World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="Interface\Entity.cpp" />
+    <ClCompile Include="Interface\Factory.cpp" />
+    <ClCompile Include="Layer\Layer.cpp" />
+    <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Renderer\D2DRenderer.cpp" />
     <ClCompile Include="Helper\Input\InputDevice\GamePad.cpp" />
     <ClCompile Include="Helper\Time\Time.cpp" />
@@ -218,6 +227,7 @@
     <ClCompile Include="Window\Window\WindowCore.cpp" />
     <ClCompile Include="Window\Window\Window.cpp" />
     <ClCompile Include="Core\WorldCore.cpp" />
+    <ClCompile Include="World\World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
