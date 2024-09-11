@@ -35,4 +35,6 @@ void DemoApplication::InitializeWindow()
 	{
 		Application::Quit();
 	}
+
+	GameManager::window.GetMainWindow()->SetWindowSize(Vector2(1000,1000));
 }

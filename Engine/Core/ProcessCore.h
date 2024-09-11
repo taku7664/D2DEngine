@@ -32,7 +32,7 @@ namespace Engine
 		bool CreateWindows(WindowData& _windowData);
 		bool CreateConsole(ConsoleData& _consoleData);
 		bool DestroyWindows();
-		::Window* GetWindow() { return m_window; }
+		::Window*  GetWindow() { return m_window; }
 		::Console* GetConsole() { return m_console; }
 	};
 }

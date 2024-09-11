@@ -4,7 +4,6 @@
 #include "Window/Console/ConsoleCore.h"
 #include "Window/DialogBox/DialogWindowCore.h"
 #include "Application.h"
-#include "Renderer/D3DRenderer.h"
 
 namespace Engine
 {
@@ -12,6 +11,7 @@ namespace Engine
 	std::map<std::wstring, WindowCore*> WindowSystem::m_windows = {};
 	ConsoleCore*				WindowSystem::m_activeConsole = nullptr;
 	WindowBase*		   		    WindowSystem::m_focusWindow  = nullptr;
+	WindowCore*				    WindowSystem::m_mainWindow = nullptr;;
 
 	void WindowSystem::Render()
 	{
@@ -52,12 +52,14 @@ namespace Engine
 
 		if ((*_window)->m_handle) 
 		{
+			if (!m_mainWindow) m_mainWindow = (*_window);
+			m_focusWindow = (*_window);
+
+			(*_window)->Initialize();
+
 			ShowWindow((*_window)->m_handle, SW_SHOWNORMAL);
 			UpdateWindow((*_window)->m_handle);
-			(*_window)->m_renderer = new Renderer::D3DRenderer();
-			(*_window)->m_renderer->Initialize((*_window));
-			(*_window)->SetPositionCenter();
-			m_focusWindow = (*_window);
+			
 			m_hwndWindowTable.insert(std::make_pair((*_window)->m_handle, (*_window)));
 			m_windows.insert(std::make_pair((*_window)->m_title, (*_window)));
 			return true;
@@ -84,6 +86,35 @@ namespace Engine
 			}
 		}
 		return false;
+	}
+
+	Window* WindowSystem::GetMainWindow()
+	{
+		if (m_mainWindow) return m_mainWindow;
+		else return nullptr;
+		
+	}
+
+	WindowBase* WindowSystem::GetFocusWindow()
+	{
+		if (m_focusWindow) return m_focusWindow;
+		else return nullptr;
+	}
+
+	Window* WindowSystem::GetWindow(const std::wstring& _title)
+	{
+		auto windowIter = m_windows.find(_title);
+		if (windowIter != m_windows.end())
+		{
+			return windowIter->second;
+		}
+		return nullptr;
+	}
+
+	Console* WindowSystem::GetConsole()
+	{
+		if (m_activeConsole) return m_activeConsole;
+		else return nullptr;
 	}
 
 	LRESULT CALLBACK WindowSystem::WinProc(HWND _hwnd, UINT _msg, WPARAM _wParam, LPARAM _lParam)

@@ -36,9 +36,6 @@
     <ClInclude Include="Helper\ReferenceCounter.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer\D3DRenderer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Helper\DataType\ColorF.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -108,6 +105,12 @@
     <ClInclude Include="Renderer\D2DRenderer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\WorldCore.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -120,9 +123,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Helper\Debug\Debug.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer\D3DRenderer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Helper\DataType\ColorF.cpp">
@@ -189,6 +189,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Renderer\D2DRenderer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\WorldCore.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

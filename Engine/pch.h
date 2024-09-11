@@ -17,18 +17,21 @@
 //DirectX
 #include <directxtk/SimpleMath.h>
 
-//Direct3D
-#include <d3d11.h>
-#include <d3dcompiler.h>
-#pragma comment (lib, "d3d11.lib")
-#pragma comment(lib,"d3dcompiler.lib")
-#include <imgui.h>
-#include <imgui_impl_win32.h>
-#include <imgui_impl_dx11.h>
+//Direct2D
+#include <d2d1.h>
+#include <dwrite.h>
+#include <d2d1_1helper.h>
+#include <d2d1effects.h>
+#include <d2d1effectauthor.h>
+#include <wincodec.h>
+#include <comdef.h>
+#pragma comment(lib, "d2d1.lib")
+#pragma comment(lib, "dwrite.lib")
 
 // GameInput
 #include "Include/GameInput/GameInput.h"
 
+//Custom
 #include "Helper/CommonEnum.h"
 #include "Helper/CommonDef.h"
 #include "Helper/ReferenceCounter.h"

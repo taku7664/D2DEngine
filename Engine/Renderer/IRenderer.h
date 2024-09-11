@@ -8,7 +8,7 @@ namespace Renderer
 	class IRenderer
 	{
 	public:
-		virtual bool Initialize(Engine::WindowCore*& _window) = 0;
+		virtual bool Initialize(Engine::WindowCore* _window) = 0;
 		virtual void Release() = 0;
 		virtual void Clear() = 0;
 		virtual void Clear(ColorF _color) = 0;

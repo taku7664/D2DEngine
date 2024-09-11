@@ -14,6 +14,8 @@ public:
 	//void SendMessegeBox(WCHAR _title, WCHAR _text, std::function<void(int, int)> func);
 protected:
 	Window() = default;
+public:
+	bool IsFocusing() { return GetFocus() == m_handle; }
 };
 
 class WindowData : public Engine::WindowDataBase

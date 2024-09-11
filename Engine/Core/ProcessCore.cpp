@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "ProcessCore.h"
-#include "Renderer/D3DRenderer.h"
 #include "System/Window/WindowSystem.h"
 
 namespace Engine
@@ -60,14 +59,6 @@ namespace Engine
 
 	void ProcessCore::Render(WindowCore* _window)
 	{
-		/*if (_window)
-		{
-			_window->GetRenderer()->Clear();
-			_window->GetRenderer()->BeginRender();
-
-			_window->GetRenderer()->Draw();
-			_window->GetRenderer()->EndRender();
-		}*/
 		WindowSystem::Render();
 	}
 
